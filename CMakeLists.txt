@@ -6,6 +6,7 @@ set(CMAKE_CXX_FLAGS_DEBUG  "-O0")
 
 include_directories(
   "${CMAKE_CURRENT_SOURCE_DIR}/include"
+  "${CMAKE_CURRENT_SOURCE_DIR}/src"
   )
 
 link_directories(
@@ -13,6 +14,9 @@ link_directories(
   )
 
 aux_source_directory(./src SRCS)
+aux_source_directory(./src/broker SRCS)
+aux_source_directory(./src/producer SRCS)
+aux_source_directory(./src/consumer SRCS)
 
 add_executable(${PROJECT_NAME} ${SRCS})
 
